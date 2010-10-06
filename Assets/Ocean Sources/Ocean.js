@@ -200,6 +200,8 @@ function Start ()
 			tile.AddComponent(MeshFilter);
 			tile.AddComponent("MeshRenderer");
 			tile.renderer.material = material;
+			tile.renderer.receiveShadows = false;
+			tile.renderer.castShadows = false;
 			
 			//Make child of this object, so we don't clutter up the
 			//scene hierarchy more than necessary.
