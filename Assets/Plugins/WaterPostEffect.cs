@@ -7,11 +7,11 @@ public class WaterPostEffect : MonoBehaviour
 
 	void Start()
 	{
-		StartCoroutine(UltraHackFromHell());
+		StartCoroutine(Hack());
 	}
 	
 	//HACK FIXME BUGREPORT?
-	IEnumerator UltraHackFromHell()
+	IEnumerator Hack()
 	{
 		enabled = false;
 		
@@ -54,20 +54,12 @@ public class WaterPostEffect : MonoBehaviour
 				waterCompositionMaterial.SetPass (i);
 				
 				GL.Begin (GL.QUADS);		
-				GL.TexCoord2( 0.0f, 0.0f ); GL.Vertex(center - up - right);// GL.Vertex3( 0.0f, 0.0f, 1f );
-				GL.TexCoord2( 1.0f, 0.0f ); GL.Vertex(center - up + right);//GL.Vertex3( 1.0f, 0.0f, 1f );
-				GL.TexCoord2( 1.0f, 1.0f ); GL.Vertex(center + up + right);//GL.Vertex3( 1.0f, 1.0f, 1f );
-				GL.TexCoord2( 0.0f, 1.0f ); GL.Vertex(center + up - right);//GL.Vertex3( 0.0f, 1.0f, 1f );
+				GL.TexCoord2( 0.0f, 0.0f ); GL.Vertex(center - up - right);
+				GL.TexCoord2( 1.0f, 0.0f ); GL.Vertex(center - up + right);
+				GL.TexCoord2( 1.0f, 1.0f ); GL.Vertex(center + up + right);
+				GL.TexCoord2( 0.0f, 1.0f ); GL.Vertex(center + up - right);
 				GL.End();
-				
-			/*	
-				GL.Begin (GL.QUADS);		
-				GL.TexCoord2( 0.0f, 0.0f ); GL.Vertex3( 0.0f, 0.0f, 1f );
-				GL.TexCoord2( 1.0f, 0.0f ); GL.Vertex3( 1.0f, 0.0f, 1f );
-				GL.TexCoord2( 1.0f, 1.0f ); GL.Vertex3( 1.0f, 1.0f, 1f );
-				GL.TexCoord2( 0.0f, 1.0f ); GL.Vertex3( 0.0f, 1.0f, 1f );
-				GL.End();
-			*/
+
 			}
 			GL.PopMatrix ();
 		}
